@@ -1,0 +1,110 @@
+:root {
+    --TheGreenMile: #6B9071;
+    --PrincessMiamaya: #E1E7D8;
+    --shrekSwamp: #375534;
+}
+
+
+
+body {
+    margin: 0;
+    color: var(--shrekSwamp);
+    
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--TheGreenMile);
+    height: 10%;
+    align-items: center;
+    border-radius: 22px 22px 0 0;
+    z-index: 1;
+}
+
+.ul-nav-styling {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 13px;
+}
+
+.icon-size {
+    width: 100px;
+    height: 100px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    background-color: var(--TheGreenMile);
+    height: 7%;
+    width: 100%;
+    border-radius: 0 0 22px 22px;
+    align-items: flex-end;
+    z-index: 1;
+}
+
+.qr {
+    margin-bottom: 50px;
+    filter: drop-shadow(0px 0px 2px black);
+}
+
+.qr2 {
+    top: -25%;
+    filter: drop-shadow(0px 0px 2px black);
+    width: 50px;
+    height: 50px;
+}
+
+.overlay {
+  
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0; 
+        background-color: var(--TheGreenMile);
+        color: white;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; 
+        transition: height 0.3s ease, border-radius 0.3s ease; 
+        border-radius: 0 0 22px 22px; 
+        z-index: 2;
+    
+}
+
+
+.overlay.active {
+    height: 70%;
+    border-radius: 22px 22px 0 0;
+}
+
+.qrknap {
+    all: unset; /* Fjerner alle standardstile */
+    cursor: pointer;
+}
+.margin0{
+    margin: 0;
+}
+
+.head-overlay{
+    display: flex;
+    width: 100%;
+    justify-content: left;
+}
+
+.closeOverlay{
+    margin-left: 2.5%;
+    margin-right: 37.5%;
+}
