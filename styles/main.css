@@ -108,3 +108,11 @@ header {
     margin-left: 2.5%;
     margin-right: 37.5%;
 }
+
+.dotted-line-breaker{
+    
+    width: 80%;
+        border-top: 3px dotted var(--TheGreenMile);
+  
+    
+}
