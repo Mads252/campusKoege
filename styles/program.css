@@ -1,0 +1,140 @@
+:root {
+    --button-background: dodgerblue;
+    --button-color: white;
+  
+    --dropdown-highlight: dodgerblue;
+    --dropdown-width: 160px;
+    --dropdown-background: white;
+    --dropdown-color: black;
+  }
+  
+  
+  
+  a.button {
+    display: inline-block;
+    padding: 1px 14px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    border: none;
+    background: var( --shrekSwamp);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  a.button:active {
+    filter: brightness(75%);
+  }
+  
+  .dropdown {
+   margin-top: 100px;
+    position: relative;
+    padding: 0;
+    margin-right: 1em;
+    border: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dropdown-summary {
+    list-style: none;
+  }
+  
+  .dropdown-summary:focus {
+    outline: none;
+  }
+  
+  .dropdown-summary:focus .button {
+    border: 2px solid white;
+  }
+  
+  .dropdown-summary::before {
+    display: none;
+  }
+  
+  .dropdown[open] > .dropdown-summary::before {
+    content: ' ';
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  .dropdown-list {
+    position: absolute;
+    margin: 40px 0 0 0;
+    padding: 20px 0;
+    width: var(--dropdown-width);
+    left: 50%;
+    margin-left: calc((var(--dropdown-width) / 2) * -1);
+    box-sizing: border-box;
+    z-index: 2;
+    background: var(--dropdown-background);
+    border-radius: 6px;
+    list-style: none;
+  }
+  
+  .dropdown-item {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdown-link {
+    display: inline-block;
+    padding: 10px 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--dropdown-color);
+    text-decoration: none;
+  }
+  
+  .dropdown-link:hover {
+    background-color: var(--dropdown-highlight);
+    color: var(--dropdown-background);
+  }
+  
+  .dropdown-list::before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -10px;
+    left: 50%;
+    margin-left: -10px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent var(--dropdown-background) transparent;
+  }
+  
+
+  .flexprogs{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scrollable-row {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; 
+}
+.scrollable-row div {
+    flex: 0 0 100px; 
+    height: 100px; 
+    margin: 5px;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#roed{
+    margin-bottom: 150px;
+}
