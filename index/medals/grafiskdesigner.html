@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/campusKoege/styles/main.css">
+    <link rel="stylesheet" href="/campusKoege/styles/medaljer/grafiskdesigner.css">
+    <title>grafiskdesigner</title>
+    <style>.spin-image {
+        
+        
+        animation: spin 3s linear infinite;
+    }
+    @keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}</style>
+</head>
+<body>
+    <h1>Medalje</h1>
+    <h3>Du har låst op for <span style="color: yellow;">grafiskdesigner</span></h3>
+
+    <div class="medalcontainer">
+        <img src="/campusKoege/images/general pics/medalfore (2).png" alt="" class="ttt spin-image">
+
+    <img src="/campusKoege/images/general pics/medalfore (1).png" alt="" class="ttt">
+  
+    </div>
+
+    <a href=""><button class="button-28">FORTSÆT</button></a>
+</body>
+<script>// Select the image
+    const image = document.getElementById("image");
+    
+    // Add a click event listener to rotate the image
+    image.addEventListener("click", () => {
+        // Add a rotation transformation
+        image.style.transform = "rotate(360deg)";
+        
+        // Reset the rotation after the animation completes
+        setTimeout(() => {
+            image.style.transform = "rotate(0deg)";
+        }, 1000); // Match the duration of the CSS transition
+    });
+    </script>
+</html>
