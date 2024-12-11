@@ -1,5 +1,17 @@
-iframe{
+
+iframe {
     width: 100vw;
     height: 100vh;
 }
-.home{position: absolute; bottom: 10px; left: 10px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;}
+
+.home {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

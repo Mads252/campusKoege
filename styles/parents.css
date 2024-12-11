@@ -85,3 +85,105 @@ button{
     margin: 2px;
 }
 
+
+/* sunes popup*/
+
+.picturepicture{
+    margin-top: 62px;
+}
+.exitbutton{
+    margin: 15px;
+    position: absolute;
+}
+
+.button2{
+    all:unset;
+}
+
+.p2{
+    font-size: 12px;
+    margin: 26px;
+    font-weight: 300;
+}
+
+.p1{
+    font-size: 10px;
+    margin-top: -30px;
+    font-weight: 300;
+}
+
+.h22{
+    font-size: 17px;
+    margin: 26px;
+    font-weight: 700;
+}
+
+#img2{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.contentbox2{
+    background-color: #E1E7D8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 433px;
+    border-radius: 0px 0px 22px 22px;
+    font-family: greycliff-cf, sans-serif;
+    font-style: normal;
+    color: #375534;
+}
+
+.content2{
+    margin-bottom: 50px;
+}
+
+.sunesballade {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0; 
+    background-color: var(--TheGreenMile);
+    color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    transition: height 0.3s ease, border-radius 0.3s ease; 
+    border-radius: 0 0 22px 22px; 
+    z-index: 10;
+}
+.backgroundblur {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: fixed; /* Fixed så den dækker hele viewporten */
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(10px); /* Blur-effekt */
+}
+
+.backgroundblur.active2 {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.sunesballade.active {
+    height: 80%;
+    width: 80%; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px; 
+}

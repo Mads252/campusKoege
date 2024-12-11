@@ -3,23 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map</title>
+    <title>Google Maps med Markører, Billeder og Popups</title>
     <link rel="stylesheet" href="/campusKoege/styles/main.css">
     <link rel="stylesheet" href="/campusKoege/styles/map.css">
-    
-    <link rel="manifest" href="/campusKoege/test.json">
-    <script src="/campusKoege/script/navbar.js" defer></script>
-    <meta name="theme-color" content="#6B9071"/>
-</head>
-<body style="background-color:#E6E6E6;">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcl7aJK_U_wLgw6DGYfL5B4tjoNgJ4f80"></script>
+    <script>
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 55.45752, lng: 12.18559 }, // Køge
+                zoom: 15, // Zoom ind for et lille område
+            });
 
+            // Brugerdefinerede markørbilleder
+            const customIcon = {
+                url: '/campusKoege/images/icons/pinTest.png', // Erstat med din absolutte URL til billedet
+                size: new google.maps.Size(40, 40), // Juster billedets størrelse
+                scaledSize: new google.maps.Size(40, 40), // Skalering af billedet
+                origin: new google.maps.Point(0, 0), // Oprindelse af billedet
+                anchor: new google.maps.Point(20, 40), // Juster markørens position
+            };
+
+            // Opret InfoWindow (popup)
+            const infowindow = new google.maps.InfoWindow();
+
+            // Funktion til at vise popup, når der klikkes på en markør
+            function addMarker(position, title, content) {
+                const marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: title,
+                    icon: customIcon, // Brug brugerdefineret billede
+                });
+
+                // Når markøren klikkes, vis popup med info
+                marker.addListener("click", function() {
+                    infowindow.setContent(content); // Sæt indholdet i popup
+                    infowindow.open(map, marker); // Åbn popup
+                });
+            }
+
+            // groen zone
+            addMarker({ lat: 55.45652, lng: 12.18177 }, "Køge centrum", "<h3>Køge</h3><p>Velkommen til Køge!</p><img src='/campusKoege/images/general pics/Kim love.png' width='100' />");
+            addMarker({ lat: 55.45672, lng: 12.18123 }, "Markør 2", "<h3>Markør 2</h3><p>Dette er markør 2.</p>");
+            addMarker({ lat: 55.45654, lng: 12.18074 }, "Markør 3", "<h3>Markør 3</h3><p>Dette er markør 3.</p>");
+            addMarker({ lat: 55.45639, lng: 12.18129 }, "Markør 4", "<h3>Markør 4</h3><p>Dette er markør 4.</p>");
+            addMarker({ lat: 55.45646, lng: 12.18240 }, "Køge centrum", "<h3>Køge</h3><p>Velkommen til Køge!</p><img src='/campusKoege/images/general pics/Kim love.png' width='100' />");
+
+            // roed zone
+            addMarker({ lat: 55.45752, lng: 12.18559 }, "Markør 2", "<h3>Markør 2</h3><p>Dette er markør 2.</p>");
+            addMarker({ lat: 55.45759, lng: 12.18529 }, "Markør 3", "<h3>Markør 3</h3><p>Dette er markør 3.</p>");
+            addMarker({ lat: 55.45776, lng: 12.18534 }, "Markør 4", "<h3>Markør 4</h3><p>Dette er markør 4.</p>");
+            addMarker({ lat: 55.45769, lng: 12.18558 }, "Køge centrum", "<h3>Køge</h3><p>Velkommen til Køge!</p><img src='/campusKoege/images/general pics/Kim love.png' width='100' />");
+            addMarker({ lat: 55.45777, lng: 12.18593 }, "Markør 2", "<h3>Markør 2</h3><p>Dette er markør 2.</p>");
+
+            // gul zone
+            addMarker({ lat: 55.45951, lng: 12.18286 }, "Markør 3", "<h3>Markør 3</h3><p>Dette er markør 3.</p>");
+            addMarker({ lat: 55.45896, lng: 12.18268 }, "Markør 4", "<h3>Markør 4</h3><p>Dette er markør 4.</p>");
+            addMarker({ lat: 55.45971, lng: 12.18334 }, "Køge centrum", "<h3>Køge</h3><p>Velkommen til Køge!</p><img src='/campusKoege/images/general pics/Kim love.png' width='100' />");
+            addMarker({ lat: 55.45938, lng: 12.18397 }, "Markør 2", "<h3>Markør 2</h3><p>Dette er markør 2.</p>");
+            addMarker({ lat: 55.45887, lng: 12.18378 }, "Markør 3", "<h3>Markør 3</h3><p>Dette er markør 3.</p>");
+
+            // blaat
+            addMarker({ lat: 55.45553, lng: 12.18404 }, "Markør 4", "<h3>Markør 4</h3><p>Dette er markør 4.</p>");
+            addMarker({ lat: 55.45555, lng: 12.18467 }, "Køge centrum", "<h3>Køge</h3><p>Velkommen til Køge!</p><img src='/campusKoege/images/general pics/Kim love.png' width='100' />");
+            addMarker({ lat: 55.45588, lng: 12.18480 }, "Markør 2", "<h3>Markør 2</h3><p>Dette er markør 2.</p>");
+            addMarker({ lat: 55.45594, lng: 12.18440 }, "Markør 3", "<h3>Markør 3</h3><p>Dette er markør 3.</p>");
+            addMarker({ lat: 55.45573, lng: 12.18457 }, "Markør 4", "<h3>Markør 4</h3><p>Dette er markør 4.</p>");
+
+            // purble
+            addMarker({ lat: 55.46094, lng: 12.18182 }, "Markør 4", "<h3>Markør 4</h3><p>Dette er markør 4.</p>");
+            addMarker({ lat: 55.46118, lng: 12.18284 }, "Køge centrum", "<h3>Køge</h3><p>Velkommen til Køge!</p><img src='/campusKoege/images/general pics/Kim love.png' width='100' />");
+            addMarker({ lat: 55.46151, lng: 12.18251 }, "Markør 2", "<h3>Markør 2</h3><p>Dette er markør 2.</p>");
+            addMarker({ lat: 55.46147, lng: 12.18146 }, "Markør 3", "<h3>Markør 3</h3><p>Dette er markør 3.</p>");
+            addMarker({ lat: 55.46119, lng: 12.18103 }, "Markør 4", "<h3>Markør 4</h3><p>Dette er markør 4.</p>");
+        }
+    </script>
+</head>
+<body onload="initMap()" style="background-color:#E6E6E6;">
+
+    <!-- Header -->
     <header>
         <h1 style="font-size: large; margin-left: 2.5%; margin-bottom: 5%;">Map</h1>
-        <div><a href="" style="margin-right: -15%;"><img src="/campusKoege/images/icons/sear-icon.png" alt=""></a>
-            <a href=""><img src="/campusKoege/images/icons/Notification-icon.png" alt=""></a></div>
-        
+        <div>
+            <a href="" style="margin-right: -15%;"><img src="/campusKoege/images/icons/sear-icon.png" alt=""></a>
+            <a href=""><img src="/campusKoege/images/icons/Notification-icon.png" alt=""></a>
+        </div>
     </header>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d72413.25414425875!2d12.080678698543005!3d55.44672812286259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652f0e356b4c9c7%3A0x471e9d52482e4214!2s4600%20K%C3%B8ge!5e0!3m2!1sda!2sdk!4v1733819948376!5m2!1sda!2sdk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-   <a href="/campusKoege/index/home.html"><button class="home">hjem</button></a>
+
+    <!-- Kort -->
+    <div id="map" style="width: 100vw; height: calc(100vh - 50px);"></div>
+
+    <!-- Hjem-knap -->
+    <a href="/campusKoege/index/home.html">
+        <button class="home">hjem</button>
+    </a>
+    
 </body>
 </html>
