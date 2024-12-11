@@ -2,6 +2,8 @@
     --TheGreenMile: #6B9071;
     --PrincessMiamaya: #E1E7D8;
     --shrekSwamp: #375534;
+    --jesusGreen: #AEC3B0;
+    --MidnightMoss: #0F2A1D;
 }
 
 
@@ -115,4 +117,8 @@ header {
         border-top: 3px dotted var(--TheGreenMile);
   
     
+}
+
+.bottom-margin{
+    margin-bottom: 140px;
 }
