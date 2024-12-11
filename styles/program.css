@@ -134,6 +134,9 @@
     align-items: center;
     justify-content: center;
 }
+.scrollable-row::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
 
 #roed{
     margin-bottom: 150px;
