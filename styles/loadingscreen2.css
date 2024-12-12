@@ -1,0 +1,98 @@
+body{
+    background-color: #0F2A1D;
+    margin: 0;
+    background-image: url('/campusKoege/images/general pics/Rectangle1111.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: greycliff-cf, sans-serif;
+}
+
+.contentbox{
+    
+}
+
+.background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 187px;
+    margin-bottom: 44px;
+}
+
+.bar{
+    margin-bottom: 150px;
+}
+
+.popup{
+    background-color: #6B9071;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 468px;
+    border-radius: 22px 22px 0px 0px;
+}
+
+.overskrift{
+    color: #E1E7D8;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: -80px;
+}
+
+.bodytext{
+    color: #E1E7D8;
+    font-size: 16px;
+    text-align: center;
+}
+
+button{
+    all: unset;
+}
+
+.unilogin{
+    width: 259px;
+    height: 71px;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 36px;
+}
+
+.adminlogin{
+    width: 259px;
+    height: 71px;
+    background-color: #6B9071;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px;
+    outline: solid 7px #D9D9D9;
+    outline-offset: -7px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.boxtext{
+    color: #6B9071;
+    font-size: 16px;
+}
+
+.boxtext2{
+    color: #6B9071;
+    font-size: 17px;
+}
+
+.boxtext3{
+    color: #D9D9D9;
+    font-size: 17px;
+}
+
+.mumbojumbo{
+    color: #E1E7D8;
+    font-size: 11px;
+    margin-top: 20px;
+}

@@ -1,0 +1,9 @@
+body{
+    background-color: var(--TheGreenMile);
+}
+
+.contentbox{
+    display: flex;
+    justify-content: center;
+    margin-top: 187px;
+}
