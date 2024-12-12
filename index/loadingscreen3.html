@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velkommen til Campus+</title>
+    <style>
+
+        body{
+            background-color: #0F2A1D;
+            margin: 0;
+            height: 100vh;
+            background-image: url('/campusKoege/images/general pics/Rectangle1111.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: greycliff-cf, sans-serif;
+        }
+
+        .popup{
+            background-color: #6B9071;
+            width: 100%;
+            height: 550px;
+            border-radius: 22px 22px 0px 0px;
+            display: flex;
+            justify-content: start;
+            flex-direction: column;
+            align-items: center;
+            bottom: 0;
+            position: absolute;
+        }
+
+        .bar{
+            text-align: center;
+        }
+
+        .overskrift{
+        color: #E1E7D8;
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 66px;
+        }
+
+        .bodytext{
+            color: #E1E7D8;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        input{
+            display: flex;
+            justify-content: center;
+            all: unset;
+        }
+
+        a{
+            all: unset;
+        }
+
+        .box{
+            background-color: #D9D9D9;
+            width: 299px;
+            height: 49px;
+            display: flex;
+            border-radius: 22px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            text-align: center;
+        }
+
+        .continue{
+            width: 259px;
+            height: 71px;
+            border-radius: 22px;
+            outline: solid 7px #D9D9D9;
+            outline-offset: -7px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .boxtext{
+            color: #E1E7D8;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup">
+        <div class="bar">
+            <img src="/campusKoege/images/icons/Home Indicator.png" alt="billede">
+        </div>
+
+        <h2 class="overskrift">Bliv en del af fællesskabet</h2>
+        <p class="bodytext">Log ind med Unilogin og bliv sendt til <br> din gruppe tildelt af din lærer</p>
+
+        <form>
+            <input class="box" type="text" id="username" name="username" placeholder="Brugernavn"><br>
+            <input class="box" type="text" id="password" name="password" placeholder="Adgangskode"><br><br>
+        </form>
+
+        <a href="/campusKoege/index/home.html">
+            <div class="continue">
+                <h3 class="boxtext">Fortsæt</h3>
+            </div>
+        </a>
+
+
+    </div>
+    
+</body>
+</html>
