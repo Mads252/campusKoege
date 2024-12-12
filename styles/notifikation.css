@@ -1,0 +1,26 @@
+
+h1{margin: 0;}
+.head{
+    background-image: url('/campusKoege/images/general pics/noti-hero.png');
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+body{
+    background-color: var(--officeGrey);
+}
+h1{font-size: 40px; color: var(--officeGrey);}
+h2, p{ margin: 0;}
+
+.list-items{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.noti-section{
+    margin-top: 20px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}

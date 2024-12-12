@@ -2,6 +2,9 @@
     --TheGreenMile: #6B9071;
     --PrincessMiamaya: #E1E7D8;
     --shrekSwamp: #375534;
+    --jesusGreen: #AEC3B0;
+    --MidnightMoss: #0F2A1D;
+    --officeGrey: #D9D9D9 ;
 }
 
 
@@ -54,7 +57,7 @@ header {
 
 .qr {
     margin-bottom: 50px;
-    filter: drop-shadow(0px 0px 2px black);
+    filter: drop-shadow(0px 1px 8px  rgba(0, 0, 0, 0.566));
 }
 
 .qr2 {
@@ -115,4 +118,8 @@ header {
         border-top: 3px dotted var(--TheGreenMile);
   
     
+}
+
+.bottom-margin{
+    margin-bottom: 140px;
 }

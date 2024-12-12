@@ -5,13 +5,9 @@ iframe {
 }
 
 .home {
+    all:unset;
     position: absolute;
-    bottom: 10px;
+    bottom: 120px;
     left: 10px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
