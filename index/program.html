@@ -16,44 +16,49 @@
 <body style="background-color:#E6E6E6;">
 
     <header>
-        <h1 style="font-size: large; margin-left: 2.5%; margin-bottom: 5%;">Program</h1>
+        <h1 style="font-size: large; margin-left: 2.5%; margin-bottom: 5%; color: var(--officeGrey);">Program</h1>
         <div><a href="" style="margin-right: -15%;"><img src="/campusKoege/images/icons/sear-icon.png" alt=""></a>
             <a href=""><img src="/campusKoege/images/icons/Notification-icon.png" alt=""></a></div>
         
     </header>
     <nav>
-        <ul class="ul-nav-styling">
-            <li><a href=""><img src="/campusKoege/images/icons/home-icon.png" alt="" ></a></li>
-            <li><a href="map.html"><img src="/campusKoege/images/icons/maps-icon.png" alt=""></a></li>
-            <li><button class="qrknap"><img src="/campusKoege/images/icons/qr-icon.png" alt="" class="icon-size qr" id="qr"></button></li>
-            <li><a href=""><img src="/campusKoege/images/icons/kalender-icon.png" alt=""></a></li>
-            <li><a href=""><img src="/campusKoege/images/icons/settings-icons.png" alt=""></a></li>
-            
-        </ul>
-       
-    </nav>
+      <ul class="ul-nav-styling">
+          <li><a href="/campusKoege/index/home.html"><img src="/campusKoege/images/icons/homeicon.svg" alt="" ></a></li>
+          <li><a href="map.html"><img src="/campusKoege/images/icons/maps-icon.svg" alt=""></a></li>
+          <li><button class="qrknap"><img src="/campusKoege/images/icons/qr-icon2.svg" alt="" class="icon-size qr" id="qr"></button></li>
+          <li><a href="/campusKoege/index/program.html"><img src="/campusKoege/images/icons/mapactive.svg" alt=""></a></li>
+          <li><a href=""><img src="/campusKoege/images/icons/settings-icons.svg" alt=""></a></li>
+          
+      </ul>
+     
+  </nav>
      <section>
        
         <div class="slideshow_hjem_container">
           
           <div class="home_slides fade">
             
-            <img src="/campusKoege/images/general pics/dagenprogramhero.png">
+            <img src="/campusKoege/images/general pics/dagens1.png" style="width: 100%;">
           </div>
           <div class="home_slides fade">
             
-            <img src="/campusKoege/images/general pics/dagenprogramhero.png">
+            <img src="/campusKoege/images/general pics/dagens2.png" style="width: 100%;">
             </div>
           
           <div class="home_slides fade">
             
-            <img src="/campusKoege/images/general pics/dagenprogramhero.png">
+            <img src="/campusKoege/images/general pics/dagens3.png" style="width: 100%;"> 
           </div>
           
           <div class="home_slides fade">
            
-            <img src="/campusKoege/images/general pics/dagenprogramhero.png">
+            <img src="/campusKoege/images/general pics/dagens4.png" style="width: 100%;">
           </div>
+          <div class="home_slides fade">
+           
+            <img src="/campusKoege/images/general pics/dagens5.png" style="width: 100%;">
+          </div>
+          
           
           </div>
           <div class="prikker">
@@ -68,7 +73,7 @@
 
 <details class="dropdown">
   <summary class="dropdown-summary" role="button">
-      <a class="button">Vælg zone</a>
+      <a class="button">Sorter</a>
   </summary>
   <ul class="dropdown-list">
       <li class="dropdown-item"><a href="#" class="dropdown-link" data-zone="all">Vis alle zoner</a></li>
@@ -81,9 +86,10 @@
 
       
 <section id="groen" class="flexprogs">
-  <h3>Grøn</h3>
+  <div style="display: flex; justify-items: left; width: 90%; flex-direction: column;"><h3>Grøn zone</h3><h6>Dagens program for grøn zone</h6></div>
+  
    
-    <div class="dotted-line-breaker"></div>
+    
     <div class="scrollable-row">
         <div><img src="/campusKoege/images/general pics/marttest.png" alt=""></div>
         <div><img src="/campusKoege/images/general pics/marttest.png" alt=""></div>
@@ -92,10 +98,11 @@
         <div><img src="/campusKoege/images/general pics/marttest.png" alt=""></div>
         
     </div>
+    <div class="dotted-line-breaker"></div>
 </section>
 
 <section id="gul" class="flexprogs"> 
-  <h3>Gul</h3>
+  <h3 >Gul zone</h3>
     <div class="dotted-line-breaker"></div>
     <div class="scrollable-row">
         <div><img src="/campusKoege/images/general pics/marttest.png" alt=""></div>
@@ -107,7 +114,7 @@
     </div></section>
     
 <section id="bla" class="flexprogs"> 
-  <h3>Blå</h3>
+  <h3>Blå zone</h3>
   <div class="dotted-line-breaker"></div>
     <div class="scrollable-row">
         <div><img src="/campusKoege/images/general pics/marttest.png" alt=""></div>
@@ -119,7 +126,7 @@
     </div></section>
     
 <section id="roed" class="flexprogs"> 
-  <h3>Rød</h3>
+  <h3>Rød zone</h3>
   <div class="dotted-line-breaker"></div>
     <div class="scrollable-row">
         <div><img src="/campusKoege/images/general pics/marttest.png" alt=""></div>
@@ -134,16 +141,18 @@
 
     <div class="overlay" id="overlay">
 
-        <div class="head-overlay"><button class="closeOverlay qrknap" id="closeOverlay"><img src="/images/icons/exit-icon.png" alt=""></button>
-               
-        <img src="/images/icons/qr-icon.png"  class="qr2" alt=""></div>
+      <div class="head-overlay"><button class="closeOverlay qrknap" id="closeOverlay"><img src="/campusKoege/images/icons/exit-icon.svg" alt=""></button>
+             
+      <img src="/campusKoege/images/icons/QR3.png"  class="qr2" alt="">
+  </div>
 
-        <h2 class="margin0">"Team navn"</h2>
-   <h6 class="margin0">Betina, Claus, Kim og Love</h6>
-   <img src="/images/general pics/kæmpe-qr.png" alt="">
-   <img src="/images/general pics/line breaker.png" alt="">
-   <img src="/images/general pics/medeals pics.png" alt="">
-    </div>
+      <h2 class="margin0">Aktivitetspas</h2>
+ <h6 class="margin0">Betina, Claus, Kim og Love</h6>
+ <img src="/campusKoege/images/general pics/kæmpe-qr.png" alt="">
+ <img src="/campusKoege/images/general pics/line breaker.png" alt="">
+ <img src="/campusKoege/images/general pics/medeals pics.png" alt="">
+  </div>
+  <div class="bottom-margin"></div>
    
 </body>
 </html>
