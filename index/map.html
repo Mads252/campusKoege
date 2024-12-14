@@ -6,8 +6,35 @@
     <title>Google Maps med Markører, Billeder og Popups</title>
     <link rel="stylesheet" href="/campusKoege/styles/main.css">
     <link rel="stylesheet" href="/campusKoege/styles/map.css">
+    <script src="/campusKoege/script/navbar.js" defer></script>
     <meta name="theme-color" content="#6B9071"/>
     <style>
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* For at tilpasse InfoWindow'ets stil */
+        .info-window {
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+
+        .info-window button {
+            padding: 10px;
+            font-size: 14px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .info-window button:hover {
+            background-color: #45a049;
+        }
+
         /* Fjern standard Google Maps InfoWindow-styling */
         .gm-style-iw {
             background-color: transparent !important;
@@ -19,6 +46,17 @@
         /* Fjern uønskede overlays og standard margener */
         .gm-style-iw-t::after, .gm-style-iw-t::before {
             display: none !important;
+        }
+
+        .gm-ui-hover-effect {
+            background-color: rgb(255, 255, 255) !important; /* Gør baggrunden sort */
+            fill: white !important; /* Skift ikonet til hvidt */
+            border-radius: 100%;
+        }
+
+        /* Sikre, at også standard SVG-ikoner påvirkes */
+        .gm-ui-hover-effect svg {
+            fill: white !important; /* Skift farven på SVG-ikoner til hvid */
         }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcl7aJK_U_wLgw6DGYfL5B4tjoNgJ4f80"></script>
@@ -67,73 +105,66 @@
                 anchor: new google.maps.Point(20, 40), // Juster markørens position
             };
            
-            
-
             // Opret InfoWindow (popup)
             const infowindow = new google.maps.InfoWindow();
+
             function addMarker(position, title, content, icon) {
-    const marker = new google.maps.Marker({
-        position: position,
-        map: map,
-        title: title,
-        icon: icon,
-    });
+                const marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: title,
+                    icon: icon,
+                });
 
-    marker.addListener("click", function () {
-        const styledContent = `
-            <div style="width: 270px; border-radius: 10px; font-family: Arial, sans-serif; color: #2C3E50; text-align: center; box-sizing: border-box;">
-                <!-- Top: Hvid baggrund med logo -->
-                <div style="background-color: white; padding: 10px; border-radius: 10px 10px 0 0;">
-                    <img src="/campusKoege/images/general pics/euclogosort.png" alt="Logo" style="width: 100%; max-width: 280px; height: auto; border-radius: 8px;" />
-                </div>
-                
-                
-                <div style="left: 40%; top: 42%; position: fixed;">
-                    <img src="/campusKoege/images/icons/redbagde.png" alt="Badge" style="width: 60px; height: 60px;" />
-                </div>
-                
-                <!-- Bund: Grøn baggrund med tekst -->
-                <div style="background-color: #DEE0DE; padding: 15px; border-radius: 0 0 10px 10px; text-align: left;">
-                    <h3 style="margin-top: 20px; text-align: center; color: #6B9071;">Erhversuddannelsen EUC Nordvestsjælland</h3>
-                    <p style="color: #AEC3B0;">Rap battle mod Lars Løkke,<br />
-                    Vinder man får du det gyldne “rap battle badge”, som giver dig +3000 aura.</p>
-                    <p style="color: #AEC3B0;">Nordvestsjællands Erhvervs- og Gymnasieuddannelser er en af landets største erhvervsskoler med mere end 5.000 elever fordelt på mere end 30 forskellige erhvervsuddannelser og kursustilbud.</p>
-                    
-                    <!-- Knappen til rutevejledning -->
-                    <div style="text-align: center; margin-top: 15px;">
-                        <button onclick="getDirections(${position.lat}, ${position.lng})" style="
-                            width: 80%; 
-                            padding: 10px; 
-                            font-size: 14px; 
-                            color: #6B9071; 
-                            background: transparent; 
-                            border: 2px solid #6B9071; 
-                            border-radius: 5px; 
-                            cursor: pointer;
-                        ">
-                            Få rutevejledning
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `;
+                marker.addListener("click", function () {
+                    const styledContent = `
+                        <div style="width: 270px; border-radius: 10px; font-family: Arial, sans-serif; color: #2C3E50; text-align: center; box-sizing: border-box;">
+                            <!-- Top: Hvid baggrund med logo -->
+                            <div style="background-color: white; padding: 10px; border-radius: 10px 10px 0 0;">
+                                <img src="/campusKoege/images/general pics/euclogosort.png" alt="Logo" style="width: 100%; max-width: 280px; height: auto; border-radius: 8px;" />
+                            </div>
 
-        const customInfoWindow = new google.maps.InfoWindow({
-            content: styledContent,
-            pixelOffset: new google.maps.Size(0, 0),
-        });
+                            <div style="left: 40%; top: 37%; position: fixed;">
+                                <img src="/campusKoege/images/icons/redbagde.png" alt="Badge" style="width: 60px; height: 60px;" />
+                            </div>
 
-        customInfoWindow.open(map, marker);
-    });
-}
+                            <!-- Bund: Grøn baggrund med tekst -->
+                            <div style="background-color: #DEE0DE; padding: 15px; border-radius: 0 0 10px 10px; text-align: left;">
+                                <h3 style="margin-top: 20px; text-align: center; color: #6B9071;">Erhvervsuddannelsen EUC Nordvestsjælland</h3>
+                                <p style="color: #AEC3B0;">Rap battle mod Lars Løkke,<br />
+                                Vinder man får du det gyldne “rap battle badge”, som giver dig +3000 aura.</p>
+                                <p style="color: #AEC3B0;">Nordvestsjællands Erhvervs- og Gymnasieuddannelser er en af landets største erhvervsskoler med mere end 5.000 elever fordelt på mere end 30 forskellige erhvervsuddannelser og kursustilbud.</p>
 
+                                <!-- Knappen til rutevejledning -->
+                                <div style="text-align: center; margin-top: 15px;">
+                                    <button onclick="getDirections(${position.lat}, ${position.lng})" style="
+                                        width: 80%; 
+                                        padding: 10px; 
+                                        font-size: 14px; 
+                                        color: #6B9071; 
+                                        background: transparent; 
+                                        border: 2px solid #6B9071; 
+                                        border-radius: 5px; 
+                                        cursor: pointer;
+                                    ">
+                                        Få rutevejledning
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
 
+                    const customInfoWindow = new google.maps.InfoWindow({
+                        content: styledContent,
+                        pixelOffset: new google.maps.Size(0, 0),
+                    });
 
+                    customInfoWindow.open(map, marker);
+                });
+            }
 
-
-
-            // groen zone
-            addMarker({ lat: 55.45652, lng: 12.18177 }, "Køge centrum", "<img src='/campusKoege/images/general pics/euclogo.png' width='100' /><h3>Køge</h3><p>Velkommen til Køeeege!</p>", greenPin);
+          // groen zone
+          addMarker({ lat: 55.45652, lng: 12.18177 }, "Køge centrum", "<img src='/campusKoege/images/general pics/euclogo.png' width='100' /><h3>Køge</h3><p>Velkommen til Køeeege!</p>", greenPin);
             addMarker({ lat: 55.45672, lng: 12.18123 }, "Markør 2", "<h3>Markør 2</h3><p>Dette er markør 2.</p>", greenPin);
             addMarker({ lat: 55.45654, lng: 12.18074 }, "Markør 3", "<h3>Markør 3</h3><p>Dette er markør 3.</p>" , greenPin);
             addMarker({ lat: 55.45639, lng: 12.18129 }, "Markør 4", "<h3>Markør 4</h3><p>Dette er markør 4.</p>", greenPin);
@@ -166,10 +197,18 @@
             addMarker({ lat: 55.46151, lng: 12.18251 }, "Markør 2", "<h3>Markør 2</h3><p>Dette er markør 2.</p>", redPin);
             addMarker({ lat: 55.46147, lng: 12.18146 }, "Markør 3", "<h3>Markør 3</h3><p>Dette er markør 3.</p>", redPin);
             addMarker({ lat: 55.46119, lng: 12.18103 }, "Markør 4", "<h3>Markør 4</h3><p>Dette er markør 4.</p>", redPin);
-       
+
+
+
+        }
+
+        // Rutevejledning funktion
+        function getDirections(lat, lng) {
+            const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+            window.open(directionsUrl, '_blank');
         }
     </script>
-</head>  
+</head>
 <body onload="initMap()" style="background-color:#E6E6E6;">
 
     <!-- Header -->
@@ -190,14 +229,27 @@
     </a>
     <nav>
         <ul class="ul-nav-styling">
-            <li><a href=""><img src="/campusKoege/images/icons/home-icon.png" alt="" ></a></li>
-            <li><a href="map.html"><img src="/campusKoege/images/icons/maps-icon.png" alt=""></a></li>
-            <li><button class="qrknap"><img src="/campusKoege/images/icons/qr-icon.png" alt="" class="icon-size qr" id="qr"></button></li>
-            <li><a href="/campusKoege/index/program.html"><img src="/campusKoege/images/icons/kalender-icon.png" alt=""></a></li>
-            <li><a href=""><img src="/campusKoege/images/icons/settings-icons.png" alt=""></a></li>
+            <li><a href="/campusKoege/index/home.html"><img src="/campusKoege/images/icons/homeicon.svg" alt="" ></a></li>
+            <li><a href="map.html"><img src="/campusKoege/images/icons/Mapsactive.svg" alt=""></a></li>
+            <li><button class="qrknap"><img src="/campusKoege/images/icons/qr-icon2.svg" alt="" class="icon-size qr" id="qr"></button></li>
+            <li><a href="/campusKoege/index/program.html"><img src="/campusKoege/images/icons/kalender-icon.svg" alt=""></a></li>
+            <li><a href=""><img src="/campusKoege/images/icons/settings-icons.svg" alt=""></a></li>
             
         </ul>
        
     </nav>
+    <div class="overlay" id="overlay">
+
+        <div class="head-overlay"><button class="closeOverlay qrknap" id="closeOverlay"><img src="/campusKoege/images/icons/exit-icon.svg" alt=""></button>
+               
+        <img src="/campusKoege/images/icons/QR3.png"  class="qr2" alt="">
+    </div>
+
+        <h2 class="margin0">Aktivitetspas</h2>
+   <h6 class="margin0">Betina, Claus, Kim og Love</h6>
+   <img src="/campusKoege/images/general pics/kæmpe-qr.png" alt="" style="width: 40%; ">
+   <img src="/campusKoege/images/general pics/line breaker.png" alt="" style="margin: 2%">
+   <a href="/campusKoege/index/medals/grafiskdesigner.html"><img src="/campusKoege/images/general pics/medeals pics.png" alt="" style="width: 100%;"></a>
+    </div>
 </body>
 </html>

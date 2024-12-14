@@ -35,7 +35,7 @@
     margin-right: 1em;
     border: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
   
   .dropdown-summary {
@@ -70,7 +70,7 @@
     margin: 40px 0 0 0;
     padding: 20px 0;
     width: var(--dropdown-width);
-    left: 50%;
+    right: 1%;
     margin-left: calc((var(--dropdown-width) / 2) * -1);
     box-sizing: border-box;
     z-index: 2;
@@ -147,6 +147,7 @@
 
 h3{
   margin-left: 2.5%;
+
 }
 
 h6{
