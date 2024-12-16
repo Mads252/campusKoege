@@ -20,10 +20,12 @@ margin: 0;
 }
 .sek2{
     width: 85%;
+    margin-top: 30px;
 }
 
 h1{
     margin: 0;
+    font-size: 17px;
 }
 
 h6{
@@ -31,7 +33,17 @@ h6{
     font-weight: 200;
 }
 
-
+.headline{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 80px;
+}
+.formers{
+  display: flex;
+  flex-direction: row;
+}
 
 /* CSS */
 .button-21 {
@@ -83,4 +95,83 @@ h6{
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+
+/* Skjul standard-checkbox */
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+/* Opret en grøn, rund checkmark */
+.custom-checkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+ 
+  font-weight: 100;
+  font-size: 10px;
+}
+.checkbox-group{
+  margin: 10px;
+  
+}
+.form-container{
+  margin-top: 20px;
+}
+
+.custom-checkbox .checkmark {
+  width: 20px;
+  height: 20px;
+  background-color: #ddd; /* Grå farve, før den er valgt */
+  border-radius: 50%; /* Gør den rund */
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  border: solid 5px var(--TheGreenMile);
+}
+
+/* Når checkboxen er markeret, skift farve */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  background-color: var(--MidnightMoss); /* Grøn farve */
+}
+
+/* Valg-afkrydsning */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--MidnightMoss);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.evaknapper{
+  margin-top: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.back{
+  background-color: var(--PrincessMiamaya);
+  color: var(--TheGreenMile);
+  border-radius: 22px;
+  border: solid 7px var(--TheGreenMile);
+  width: 140px;
+  height: 35px;
+}
+
+.continue{
+  background-color: var(--TheGreenMile);
+  color: var(--PrincessMiamaya);
+  border-radius: 22px;
+  border: solid 7px var(--TheGreenMile);
+  width: 140px;
+  height: 35px;
 }
