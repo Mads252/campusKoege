@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/campusKoege/styles/parents.css">
     <link rel="stylesheet" href="/campusKoege/styles/questprogress.css">
     <link rel="stylesheet" href="/campusKoege/styles/main.css">
+    <script src="navbar.js"></script>
     <title>Aktivitetsproces</title>
 </head>
 <body>
@@ -59,21 +60,25 @@
                 
                 </div>
                 <div class="allcards">
-                    <div class="cards">
-                        <img src="/campusKoege/images/general pics/green zone.png" alt="billede">
-                        <div>
-                            <h2>Grøn Zone</h2>
-                            <p>0/3</p>
+                    <a href="questgreenzone.html">
+                        <div class="cards">
+                            <img src="/campusKoege/images/general pics/green zone.png" alt="billede">
+                            <div>
+                                <h2>Grøn Zone</h2>
+                                <p>0/3</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
             
-                    <div class="cards">
-                        <img src="/campusKoege/images/general pics/red zone.png" alt="billede">
-                        <div>
-                            <h2>Rød Zone</h2>
-                            <p>0/3</p>
+                    <a href="questredzone.html">
+                        <div class="cards">
+                            <img src="/campusKoege/images/general pics/red zone.png" alt="billede">
+                            <div>
+                                <h2>Rød Zone</h2>
+                                <p>0/3</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
             
                     <div class="cards">
                         <img src="/campusKoege/images/general pics/yellow zone.png" alt="billede">
@@ -95,5 +100,32 @@
         </div>
         
     </div>
+
+    <nav>
+        <ul class="ul-nav-styling">
+            <li><a href=""><img src="/campusKoege/images/icons/homeiconactive.svg" alt="" ></a></li>
+            <li><a href="map.html"><img src="/campusKoege/images/icons/maps-icon.svg" alt=""></a></li>
+            <li><button class="qrknap"><img src="/campusKoege/images/icons/qr-icon2.svg" alt="" class="icon-size qr" id="qr"></button></li>
+            <li><a href="/campusKoege/index/program.html"><img src="/campusKoege/images/icons/kalender-icon.svg" alt=""></a></li>
+            <li><a href=""><img src="/campusKoege/images/icons/settings-icons.svg" alt=""></a></li>
+            
+        </ul>
+       
+    </nav>
+
+    <div class="overlay" id="overlay">
+
+        <div class="head-overlay"><button class="closeOverlay qrknap" id="closeOverlay"><img src="/campusKoege/images/icons/exit-icon.svg" alt=""></button>
+               
+        <img src="/campusKoege/images/icons/QR3.png"  class="qr2" alt="">
+    </div>
+
+        <h2 class="margin0">Aktivitetspas</h2>
+   <h6 class="margin0">Betina, Claus, Kim og Love</h6>
+   <img src="/campusKoege/images/general pics/kæmpe-qr.png" alt="" style="width: 40%; ">
+   <img src="/campusKoege/images/general pics/line breaker.png" alt="" style="margin: 2%">
+   <a href="/campusKoege/index/medals/grafiskdesigner.html"><img src="/campusKoege/images/general pics/medeals pics.png" alt="" style="width: 100%;"></a>
+    </div>
+    <div class="bottom-margin"></div>
 </body>
 </html>
