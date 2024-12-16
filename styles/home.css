@@ -102,3 +102,7 @@ display: none; /* For Chrome, Safari, and Edge */
 p{
   margin: 0;
 }
+
+a{
+  all: unset;
+}
