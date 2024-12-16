@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Maps med Markører, Billeder og Popups</title>
+    <title>Map</title>
     <link rel="stylesheet" href="/campusKoege/styles/main.css">
     <link rel="stylesheet" href="/campusKoege/styles/map.css">
     <script src="/campusKoege/script/navbar.js" defer></script>
+    
     <meta name="theme-color" content="#6B9071"/>
     <style>
         #map {
@@ -14,7 +15,7 @@
             width: 100%;
         }
 
-        /* For at tilpasse InfoWindow'ets stil */
+        
         .info-window {
             font-family: Arial, sans-serif;
             color: #333;
@@ -35,7 +36,7 @@
             background-color: #45a049;
         }
 
-        /* Fjern standard Google Maps InfoWindow-styling */
+      
         .gm-style-iw {
             background-color: transparent !important;
             box-shadow: none !important;
@@ -43,20 +44,20 @@
             border-radius: 10px !important;
         }
 
-        /* Fjern uønskede overlays og standard margener */
+        
         .gm-style-iw-t::after, .gm-style-iw-t::before {
             display: none !important;
         }
 
         .gm-ui-hover-effect {
-            background-color: rgb(255, 255, 255) !important; /* Gør baggrunden sort */
-            fill: white !important; /* Skift ikonet til hvidt */
+            background-color: rgb(255, 255, 255) !important; 
+            fill: white !important; 
             border-radius: 100%;
         }
 
-        /* Sikre, at også standard SVG-ikoner påvirkes */
+        
         .gm-ui-hover-effect svg {
-            fill: white !important; /* Skift farven på SVG-ikoner til hvid */
+            fill: white !important; 
         }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcl7aJK_U_wLgw6DGYfL5B4tjoNgJ4f80"></script>
@@ -68,44 +69,44 @@
                 mapTypeId: google.maps.MapTypeId.SATELLITE
             });
 
-            // Brugerdefinerede markørbilleder
+            
             const greenPin = {
-                url: '/campusKoege/images/icons/pinTest.png', // Erstat med din absolutte URL til billedet
-                size: new google.maps.Size(40, 40), // Juster billedets størrelse
-                scaledSize: new google.maps.Size(40, 40), // Skalering af billedet
-                origin: new google.maps.Point(0, 0), // Oprindelse af billedet
-                anchor: new google.maps.Point(20, 40), // Juster markørens position
+                url: '/campusKoege/images/icons/pinTest.png', 
+                size: new google.maps.Size(40, 40), 
+                scaledSize: new google.maps.Size(40, 40), 
+                origin: new google.maps.Point(0, 0), 
+                anchor: new google.maps.Point(20, 40), 
             };
             const bluePin = {
-                url: '/campusKoege/images/icons/bluepin.svg', // Erstat med din absolutte URL til billedet
-                size: new google.maps.Size(40, 40), // Juster billedets størrelse
-                scaledSize: new google.maps.Size(40, 40), // Skalering af billedet
-                origin: new google.maps.Point(0, 0), // Oprindelse af billedet
-                anchor: new google.maps.Point(20, 40), // Juster markørens position
+                url: '/campusKoege/images/icons/bluepin.svg', 
+                size: new google.maps.Size(40, 40), 
+                scaledSize: new google.maps.Size(40, 40), 
+                origin: new google.maps.Point(0, 0), 
+                anchor: new google.maps.Point(20, 40), 
             };
             const yellowPin = {
-                url: '/campusKoege/images/icons/purblePin.svg', // Erstat med din absolutte URL til billedet
-                size: new google.maps.Size(40, 40), // Juster billedets størrelse
-                scaledSize: new google.maps.Size(40, 40), // Skalering af billedet
-                origin: new google.maps.Point(0, 0), // Oprindelse af billedet
-                anchor: new google.maps.Point(20, 40), // Juster markørens position
+                url: '/campusKoege/images/icons/purblePin.svg', 
+                size: new google.maps.Size(40, 40), 
+                scaledSize: new google.maps.Size(40, 40), 
+                origin: new google.maps.Point(0, 0), 
+                anchor: new google.maps.Point(20, 40), 
             };
             const purblePin = {
-                url: '/campusKoege/images/icons/yellowPin.svg', // Erstat med din absolutte URL til billedet
-                size: new google.maps.Size(40, 40), // Juster billedets størrelse
-                scaledSize: new google.maps.Size(40, 40), // Skalering af billedet
-                origin: new google.maps.Point(0, 0), // Oprindelse af billedet
-                anchor: new google.maps.Point(20, 40), // Juster markørens position
+                url: '/campusKoege/images/icons/yellowPin.svg', 
+                size: new google.maps.Size(40, 40), 
+                scaledSize: new google.maps.Size(40, 40),
+                origin: new google.maps.Point(0, 0), 
+                anchor: new google.maps.Point(20, 40), 
             };
             const redPin = {
-                url: '/campusKoege/images/icons/redPin.svg', // Erstat med din absolutte URL til billedet
-                size: new google.maps.Size(40, 40), // Juster billedets størrelse
-                scaledSize: new google.maps.Size(40, 40), // Skalering af billedet
-                origin: new google.maps.Point(0, 0), // Oprindelse af billedet
-                anchor: new google.maps.Point(20, 40), // Juster markørens position
+                url: '/campusKoege/images/icons/redPin.svg', 
+                size: new google.maps.Size(40, 40), 
+                scaledSize: new google.maps.Size(40, 40), 
+                origin: new google.maps.Point(0, 0), 
+                anchor: new google.maps.Point(20, 40), 
             };
            
-            // Opret InfoWindow (popup)
+           
             const infowindow = new google.maps.InfoWindow();
 
             function addMarker(position, title, content, icon) {
@@ -238,6 +239,7 @@
         </ul>
        
     </nav>
+   
     <div id="backgroundblur" class="backgroundblur"></div>
     <div class="overlay" id="overlay">
 

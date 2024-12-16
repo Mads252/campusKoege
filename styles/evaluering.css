@@ -20,7 +20,7 @@ margin: 0;
 }
 .sek2{
     width: 85%;
-    margin-top: 30px;
+    
 }
 
 h1{
@@ -45,7 +45,7 @@ h6{
   flex-direction: row;
 }
 
-/* CSS */
+
 .button-21 {
   align-items: center;
   appearance: none;
@@ -175,3 +175,4 @@ h6{
   width: 140px;
   height: 35px;
 }
+
