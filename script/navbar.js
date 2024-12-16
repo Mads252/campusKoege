@@ -1,10 +1,11 @@
 const toggleoverlay = document.getElementById('qr');
 const overlay = document.getElementById('overlay');
 const lukOverlay = document.getElementById('closeOverlay');
+const backgroundblur = document.getElementById('backgroundblur');
 
 toggleoverlay.addEventListener('click', () => {
 
-
+  backgroundblur.classList.add('active2');
 
     overlay.classList.add('active');
 })
@@ -12,7 +13,7 @@ toggleoverlay.addEventListener('click', () => {
 lukOverlay.addEventListener('click', () => {
 
 
-
+  backgroundblur.classList.remove('active2');
     overlay.classList.remove('active');
 })
 
