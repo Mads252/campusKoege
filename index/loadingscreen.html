@@ -6,10 +6,23 @@
     <title>Velkommen til Campus+</title>
     <link rel="stylesheet" href="/campusKoege/styles/loadingscreen.css">
     <link rel="stylesheet" href="/campusKoege/styles/main.css">
+    <link rel="manifest" href="/campusKoege/test.json">
+    <style>
+        .fade {
+            opacity: 1;
+            transition: opacity 4s ease-out;
+        }
+    </style>
 </head>
 <body>
     <div class="contentbox">
         <img src="/campusKoege/images/general pics/campuslogo.png" alt="billede">
-    </div>
+    </div> 
 </body>
+<script>
+    
+    setTimeout(function() {
+        window.location.href = "/campusKoege/index/loadingscreen2.html";
+    }, 4000);
+</script>
 </html>

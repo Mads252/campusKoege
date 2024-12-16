@@ -33,18 +33,18 @@
 
     <a href="/campusKoege/index/home.html"><button class="button-28">FORTSÆT</button></a>
 </body>
-<script>// Select the image
+<script>
     const image = document.getElementById("image");
     
-    // Add a click event listener to rotate the image
+    
     image.addEventListener("click", () => {
-        // Add a rotation transformation
+       
         image.style.transform = "rotate(360deg)";
         
-        // Reset the rotation after the animation completes
+        
         setTimeout(() => {
             image.style.transform = "rotate(0deg)";
-        }, 1000); // Match the duration of the CSS transition
+        }, 1000); 
     });
     </script>
 </html>

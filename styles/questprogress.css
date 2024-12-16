@@ -1,5 +1,6 @@
 body{
     margin: 0%;
+    background-color: #D9D9D9;
 }
 
 a{
@@ -9,9 +10,8 @@ a{
 h2{
     font-weight: 700;
     font-size: 17px;
-    margin: 0%;
-    padding-bottom: 6px;
-    padding-left: 5px;
+    
+    
 }
 
 p{
@@ -19,31 +19,13 @@ p{
     font-weight: 300;
 }
 
-.header{
-    background-color: white;
-    height: 76px;
-}
 
-.header-icons{
-    display: flex;
-    width: 100%;
-    position: absolute;
-    justify-content: space-between;
-    margin-top: 25px;
-}
 
-.searchicon{
-    margin-right: -20px;
-}
 
 button{
     all:unset;
 }
 
-img{
-    display: flex;
-    justify-content: center;
-}
 
 .contentbox{
     background-color: #D9D9D9;
@@ -91,4 +73,13 @@ img{
 .allcards{
     margin-left: 20px;
     margin-bottom: -80px;
+}
+
+.contenteva{
+    display: flex;
+    justify-content: space-between;
+}
+
+.evacontainer{
+    background-color: white;
 }

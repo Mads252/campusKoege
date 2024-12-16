@@ -84,7 +84,7 @@ margin-bottom: 2%;
   justify-content: center;
 }
 .scrollable-row::-webkit-scrollbar {
-display: none; /* For Chrome, Safari, and Edge */
+display: none; 
 }
 
 .progress-bar{
